@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Private</title>
+<style>
+body{
+  background:#0f172a;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Arial;
+  color:white;
+}
+.box{
+  background:#020617;
+  padding:30px;
+  border-radius:12px;
+  text-align:center;
+}
+input,button{
+  margin-top:15px;
+  padding:10px;
+  width:100%;
+  border-radius:8px;
+  border:none;
+}
+button{background:#38bdf8;}
+#error{color:#f87171;display:none;}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>🔒 Private Access</h2>
+  <input type="password" id="pass" placeholder="Password">
+  <button onclick="check()">Enter</button>
+  <div id="error">Wrong password</div>
+</div>
+
+<script>
+function check(){
+  if(document.getElementById("pass").value==="love123"){
+    window.location.href="home.html";
+  }else{
+    document.getElementById("error").style.display="block";
+  }
+}
+</script>
+
+</body>
+</html>
+
