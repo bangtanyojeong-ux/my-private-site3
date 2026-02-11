@@ -8,11 +8,42 @@
 <style>
 body{
   margin:0;
-  background:radial-gradient(circle at top,#1e3a8a,#020617);
-  color:white;
+  min-height:100vh;
   font-family:Arial, sans-serif;
+  color:#f8fafc;
+  background:
+    /* romantic pink glow */
+    radial-gradient(circle at 18% 28%, rgba(244,114,182,0.25), transparent 42%),
+
+    /* dreamy cloud tones */
+    radial-gradient(circle at 82% 22%, rgba(199,210,254,0.25), transparent 45%),
+
+    /* star-like soft light */
+    radial-gradient(circle at 50% 15%, rgba(255,255,255,0.12), transparent 30%),
+
+    /* bottom dreamy glow */
+    radial-gradient(circle at 50% 85%, rgba(165,180,252,0.28), transparent 48%),
+
+    /* clean dark base */
+    linear-gradient(180deg, #020617, #0b1220, #1e293b);
 }
 
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(236,72,153,0.12), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(139,92,246,0.12), transparent 40%);
+  animation: dreamyMove 14s ease-in-out infinite alternate;
+  z-index:-1;
+}
+
+@keyframes dreamyMove{
+  from{ transform: translateY(0); }
+  to{ transform: translateY(-35px); }
+  }
+  
 /* MAIN */
 .hero{
   min-height:100vh;
@@ -48,15 +79,10 @@ h1{
 }
 
 /* CARDS */
-.cards{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  justify-content:center;
-  opacity:0;
-  transform:translateY(40px);
-  animation:cardsIn 1s forwards;
-  animation-delay:1.8s;
+.card{
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
 
 @keyframes cardsIn{
