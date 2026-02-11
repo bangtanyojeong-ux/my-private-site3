@@ -1,69 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Private</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private 🤍</title>
 
 <style>
 body{
   margin:0;
-  height:100vh;
+  min-height:100vh;
+  background:url("bg.jpg") center/cover no-repeat;
   display:flex;
-  justify-content:center;
   align-items:center;
-  background:#0f172a;
+  justify-content:center;
   font-family:Arial, sans-serif;
-  color:white;
 }
 
 .box{
-  background:#020617;
+  background:rgba(255,255,255,0.85);
   padding:30px;
-  border-radius:14px;
-  width:280px;
+  border-radius:20px;
   text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
-input, button{
-  width:100%;
+input{
   padding:10px;
-  margin-top:15px;
+  border-radius:10px;
   border:none;
-  border-radius:8px;
+  margin-top:10px;
 }
 
 button{
-  background:#38bdf8;
-  font-size:16px;
-}
-
-#error{
-  color:#f87171;
-  display:none;
-  margin-top:10px;
+  margin-top:15px;
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  background:#7f1d1d;
+  color:white;
 }
 </style>
-</head>
-
-<body>
-
-<div class="box">
-  <h2>🔒 Private Access</h2>
-  <input type="password" id="pass" placeholder="Password">
-  <button onclick="check()">Enter</button>
-  <div id="error">Wrong password</div>
-</div>
 
 <script>
 function check(){
-  if(document.getElementById("pass").value === "love123"){
-    window.location.href = "home.html";
+  if(document.getElementById("pw").value==="1602us"){
+    window.location="home.html";
   }else{
-    document.getElementById("error").style.display = "block";
+    alert("Wrong password");
   }
 }
 </script>
+</head>
 
+<body>
+<div class="box">
+  <h2>Enter Password 🤍</h2>
+  <input id="pw" type="password" placeholder="password">
+  <br>
+  <button onclick="check()">Enter</button>
+</div>
 </body>
 </html>
