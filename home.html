@@ -82,6 +82,8 @@ a{text-decoration:none}
 </head>
 
 <body>
+<div class="page">
+  
 <h1>Just For You 💌</h1>
 
 <div class="cards">
@@ -99,7 +101,20 @@ setInterval(()=>{
   h.style.fontSize=(12+Math.random()*20)+"px";
   document.body.appendChild(h);
   setTimeout(()=>h.remove(),8000);
-},600);
+},600)
+  
+document.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", function(e) {
+    e.preventDefault();
+    const page = document.querySelector(".page");
+    page.classList.add("fade-out");
+
+    setTimeout(() => {
+      window.location = this.href;
+    }, 350);
+  });
+})
+  
 </script>
 </body>
 </html>
