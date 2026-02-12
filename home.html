@@ -43,10 +43,10 @@ h1{
   justify-content:center;
 }
 
-/* CARD STYLE */
+/* CARD */
 .card{
   width:220px;
-  height:140px;
+  height:150px;
   background:rgba(255,245,240,0.88);
   border-radius:18px;
   display:flex;
@@ -60,13 +60,12 @@ h1{
   overflow:hidden;
 }
 
-/* glow + lift */
 .card:hover{
   transform:translateY(-10px) scale(1.03);
   box-shadow:0 0 35px rgba(255,120,120,0.9);
 }
 
-/* shimmer sweep */
+/* SHIMMER */
 .card::before{
   content:"";
   position:absolute;
@@ -86,37 +85,57 @@ h1{
   left:120%;
 }
 
-/* glowing pulse */
-.card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:18px;
-  box-shadow:0 0 0 rgba(255,120,120,0);
-  animation:pulse 3s infinite;
-  pointer-events:none;
-}
-@keyframes pulse{
-  0%{box-shadow:0 0 0 rgba(255,120,120,0)}
-  50%{box-shadow:0 0 25px rgba(255,120,120,0.45)}
-  100%{box-shadow:0 0 0 rgba(255,120,120,0)}
-}
-
-/* CARTOON CHARACTER */
+/* CARTOON ELEMENTS */
 .toon{
   position:absolute;
-  top:-22px;
-  right:15px;
-  font-size:22px;
-  animation:bounce 2.2s ease-in-out infinite;
-  transition:0.3s;
+  font-size:18px;
+  pointer-events:none;
 }
+
+/* cat */
+.cat{
+  top:-18px;
+  left:15px;
+  animation:bounce 2.2s ease-in-out infinite;
+}
+
+/* cloud */
+.cloud{
+  top:-16px;
+  right:15px;
+  animation:float 3s ease-in-out infinite;
+}
+
+/* star */
+.star{
+  bottom:10px;
+  left:15px;
+  animation:twinkle 1.8s infinite;
+}
+
+/* heart */
+.heart{
+  bottom:10px;
+  right:15px;
+  animation:pulse 1.6s infinite;
+}
+
+/* animations */
 @keyframes bounce{
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(-8px)}
 }
-.card:hover .toon{
-  transform:rotate(12deg) scale(1.2);
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+@keyframes twinkle{
+  0%,100%{opacity:0.4}
+  50%{opacity:1}
+}
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.25)}
 }
 
 a{text-decoration:none}
@@ -131,21 +150,30 @@ a{text-decoration:none}
     <div class="cards">
       <a href="photos.html">
         <div class="card">
-          <div class="toon">ʕ•ᴥ•ʔ</div>
+          <div class="toon cat">🐱</div>
+          <div class="toon cloud">☁️</div>
+          <div class="toon star">⭐</div>
+          <div class="toon heart">❤️</div>
           📸 Photos
         </div>
       </a>
 
       <a href="songs.html">
         <div class="card">
-          <div class="toon">(｡♥‿♥｡)</div>
+          <div class="toon cat">🐱</div>
+          <div class="toon cloud">☁️</div>
+          <div class="toon star">⭐</div>
+          <div class="toon heart">❤️</div>
           🎵 Songs
         </div>
       </a>
 
       <a href="letter.html">
         <div class="card">
-          <div class="toon">(ᵔᴥᵔ)</div>
+          <div class="toon cat">🐱</div>
+          <div class="toon cloud">☁️</div>
+          <div class="toon star">⭐</div>
+          <div class="toon heart">❤️</div>
           💌 Letter
         </div>
       </a>
