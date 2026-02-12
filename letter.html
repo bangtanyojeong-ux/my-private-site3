@@ -11,6 +11,21 @@ body{
   font-family:Georgia, serif;
 }
 
+/* PAGE TRANSITION */
+.page{
+  animation:fadeIn 0.6s ease forwards;
+}
+.fade-out{
+  animation:fadeOut 0.4s ease forwards;
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeOut{
+  to{opacity:0;transform:translateY(-15px)}
+}
+
 .box{
   background:rgba(255,255,255,0.95);
   margin:30px;
@@ -18,83 +33,36 @@ body{
   border-radius:22px;
   color:#7f1d1d;
   line-height:1.8;
-  box-shadow:0 15px 35px rgba(0,0,0,0.3);
-  animation:fade 1.2s ease;
 }
 
-@keyframes fade{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-a{color:#7f1d1d;text-decoration:none;}
-  /* PAGE TRANSITION */
-.page {
-  animation: fadeIn 0.6s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-out {
-  animation: fadeOut 0.4s ease forwards;
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-}
-  
+a{color:#7f1d1d;text-decoration:none}
 </style>
 </head>
-  <script>
-document.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", function(e) {
-    e.preventDefault();
-    const page = document.querySelector(".page");
-    page.classList.add("fade-out");
-
-    setTimeout(() => {
-      window.location = this.href;
-    }, 350);
-  });
-});
-        </script>
-  
 
 <body>
-  <div class="page">
-
-<div class="box">
-<p>Hey Love,</p>
-   Happyyyy Aniversary, it have heen with each other for the last few years. I Am really 
-  gateful for that.🤗
-</p>
-  I always wanted to make you something like this,Idk wheather you will like this but I have 
-  tried my best, this might seem simple but it took more time to male. I hope you like this.Yk I love you soooo much 
-  but I don't know wheather you feel the same, I always wanted to be with you as partner, please don't leave me 🥺
-  i love you sooo much,Teerakkkkk 💗😽
-
-<p>
-You mean more to me than words can ever explain. I always loved you so much and will . Thank for being in all situations in my life,I am so glad that 
-  I met you, At the end once again happy anniversary 😽💋
-</p>
-
-<p>Your lovely , Piccolo monella 
-</p>
-
-<a href="home.html">← Back</a>
+<div class="page">
+  <div class="box">
+    <p>Hey Love,</p>
+    <p>
+      This little place exists because you exist in my life.
+      Every memory here is something I want you to keep forever.
+    </p>
+    <p>
+      No matter what, remember — you are deeply loved.
+    </p>
+    <p>Always yours 🤍</p>
+    <a href="home.html">← Back</a>
+  </div>
 </div>
 
+<script>
+document.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click",e=>{
+    e.preventDefault();
+    document.querySelector(".page").classList.add("fade-out");
+    setTimeout(()=>location=link.href,350);
+  });
+});
+</script>
 </body>
 </html>
