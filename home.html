@@ -43,10 +43,11 @@ h1{
   justify-content:center;
 }
 
+/* CARD STYLE */
 .card{
   width:220px;
   height:140px;
-  background:rgba(255,245,240,0.85);
+  background:rgba(255,245,240,0.88);
   border-radius:18px;
   display:flex;
   align-items:center;
@@ -55,39 +56,17 @@ h1{
   color:#7f1d1d;
   box-shadow:0 10px 30px rgba(0,0,0,0.3);
   transition:0.4s;
-}
-
-.card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 35px rgba(255,120,120,0.9);
-}
-
-a{text-decoration:none}
-
-/* CARD GLOW ANIMATION */
-.card{
   position:relative;
   overflow:hidden;
 }
 
-/* glowing border pulse */
-.card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:18px;
-  box-shadow:0 0 0 rgba(255,120,120,0.0);
-  animation:pulse 3s infinite;
-  pointer-events:none;
+/* glow + lift */
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 0 35px rgba(255,120,120,0.9);
 }
 
-@keyframes pulse{
-  0%{box-shadow:0 0 0 rgba(255,120,120,0.0)}
-  50%{box-shadow:0 0 25px rgba(255,120,120,0.45)}
-  100%{box-shadow:0 0 0 rgba(255,120,120,0.0)}
-}
-
-/* shimmer light sweep */
+/* shimmer sweep */
 .card::before{
   content:"";
   position:absolute;
@@ -103,11 +82,44 @@ a{text-decoration:none}
   );
   transition:0.6s;
 }
-
 .card:hover::before{
   left:120%;
 }
 
+/* glowing pulse */
+.card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:18px;
+  box-shadow:0 0 0 rgba(255,120,120,0);
+  animation:pulse 3s infinite;
+  pointer-events:none;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 rgba(255,120,120,0)}
+  50%{box-shadow:0 0 25px rgba(255,120,120,0.45)}
+  100%{box-shadow:0 0 0 rgba(255,120,120,0)}
+}
+
+/* CARTOON CHARACTER */
+.toon{
+  position:absolute;
+  top:-22px;
+  right:15px;
+  font-size:22px;
+  animation:bounce 2.2s ease-in-out infinite;
+  transition:0.3s;
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+.card:hover .toon{
+  transform:rotate(12deg) scale(1.2);
+}
+
+a{text-decoration:none}
 </style>
 </head>
 
@@ -117,9 +129,26 @@ a{text-decoration:none}
     <h1>Just For You 💌</h1>
 
     <div class="cards">
-      <a href="photos.html"><div class="card">📸 Photos</div></a>
-      <a href="songs.html"><div class="card">🎵 Songs</div></a>
-      <a href="letter.html"><div class="card">💌 Letter</div></a>
+      <a href="photos.html">
+        <div class="card">
+          <div class="toon">ʕ•ᴥ•ʔ</div>
+          📸 Photos
+        </div>
+      </a>
+
+      <a href="songs.html">
+        <div class="card">
+          <div class="toon">(｡♥‿♥｡)</div>
+          🎵 Songs
+        </div>
+      </a>
+
+      <a href="letter.html">
+        <div class="card">
+          <div class="toon">(ᵔᴥᵔ)</div>
+          💌 Letter
+        </div>
+      </a>
     </div>
   </div>
 </div>
@@ -132,7 +161,6 @@ document.querySelectorAll("a").forEach(link=>{
     setTimeout(()=>location=link.href,350);
   });
 });
-
 </script>
 </body>
 </html>
