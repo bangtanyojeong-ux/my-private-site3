@@ -15,6 +15,21 @@ body{
   font-family:Poppins, Arial;
 }
 
+/* PAGE TRANSITION */
+.page{
+  animation:fadeIn 0.6s ease forwards;
+}
+.fade-out{
+  animation:fadeOut 0.4s ease forwards;
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeOut{
+  to{opacity:0;transform:translateY(-15px)}
+}
+
 .box{
   background:rgba(255,255,255,0.95);
   padding:30px;
@@ -38,71 +53,29 @@ button{
   color:white;
   margin-top:12px;
 }
-  /* PAGE TRANSITION */
-.page {
-  animation: fadeIn 0.6s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-out {
-  animation: fadeOut 0.4s ease forwards;
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-}
-  
 </style>
 
 <script>
 function check(){
-  const password = "Myteerakkk"; // 👈 CHANGE THIS
-  if(document.getElementById("pw").value === password){
-    location = "home.html";
+  const password="forever"; // change if needed
+  if(pw.value===password){
+    document.querySelector(".page").classList.add("fade-out");
+    setTimeout(()=>location="home.html",350);
   }else{
     alert("Wrong password 🤍");
   }
 }
-  <script>
-document.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", function(e) {
-    e.preventDefault();
-    const page = document.querySelector(".page");
-    page.classList.add("fade-out");
-
-    setTimeout(() => {
-      window.location = this.href;
-    }, 350);
-  });
-});
-</script>
-  
 </script>
 </head>
 
 <body>
-  <div class="page">
-    
-
-<div class="box">
-  <h3>Enter Password 🤍</h3>
-  <input id="pw" type="password" placeholder="Password">
-  <br><br>
-  <button onclick="check()">Enter</button>
+<div class="page">
+  <div class="box">
+    <h3>Enter Password 🤍</h3>
+    <input id="pw" type="password" placeholder="Password">
+    <br><br>
+    <button onclick="check()">Enter</button>
+  </div>
 </div>
-
 </body>
 </html>
