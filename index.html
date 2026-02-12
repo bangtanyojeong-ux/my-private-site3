@@ -76,10 +76,26 @@ function check(){
     alert("Wrong password 🤍");
   }
 }
+  <script>
+document.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", function(e) {
+    e.preventDefault();
+    const page = document.querySelector(".page");
+    page.classList.add("fade-out");
+
+    setTimeout(() => {
+      window.location = this.href;
+    }, 350);
+  });
+});
+</script>
+  
 </script>
 </head>
 
 <body>
+  <div class="page">
+    
 
 <div class="box">
   <h3>Enter Password 🤍</h3>
