@@ -3,34 +3,58 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Songs 🎶</title>
+
 <style>
 body{
   margin:0;
   background:url("bg.jpg") center/cover fixed;
-  font-family:Arial;
+  font-family:Poppins, Arial;
   text-align:center;
 }
-.box{
-  background:rgba(255,255,255,0.9);
-  margin:20px;
-  padding:20px;
-  border-radius:20px;
+
+h2{
+  color:#6b1f1f;
+  margin:20px 0;
 }
+
+.song-card{
+  background:rgba(255,245,240,0.9);
+  margin:15px;
+  padding:15px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  transition:0.4s;
+}
+
+.song-card:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 25px rgba(255,120,120,0.9);
+}
+
+audio{
+  width:100%;
+  margin-top:10px;
+}
+
+a{color:#7f1d1d;text-decoration:none;}
 </style>
 </head>
-<body>
-<h2>Songs for You 🎵</h2>
 
-<div class="box">
-  <p>Song One</p>
+<body>
+
+<h2>Songs For You 🎧</h2>
+
+<div class="song-card">
+  <b>just sang for you 💗</b>
   <audio controls src="song1.mp3"></audio>
 </div>
 
-<div class="box">
-  <p>Song Two</p>
+<div class="song-card">
+  <b>Another one ✨</b>
   <audio controls src="song2.mp3"></audio>
 </div>
 
 <a href="home.html">← Back</a>
+
 </body>
 </html>
