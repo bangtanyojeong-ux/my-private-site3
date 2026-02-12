@@ -12,9 +12,19 @@ body{
   text-align:center;
 }
 
-h2{
-  color:#6b1f1f;
-  margin:20px 0;
+/* PAGE TRANSITION */
+.page{
+  animation:fadeIn 0.6s ease forwards;
+}
+.fade-out{
+  animation:fadeOut 0.4s ease forwards;
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeOut{
+  to{opacity:0;transform:translateY(-15px)}
 }
 
 .song-card{
@@ -23,82 +33,38 @@ h2{
   padding:15px;
   border-radius:18px;
   box-shadow:0 10px 30px rgba(0,0,0,0.3);
-  transition:0.4s;
 }
 
-.song-card:hover{
-  transform:scale(1.03);
-  box-shadow:0 0 25px rgba(255,120,120,0.9);
-}
-
-audio{
-  width:100%;
-  margin-top:10px;
-}
-
-a{color:#7f1d1d;text-decoration:none;}
-  /* PAGE TRANSITION */
-.page {
-  animation: fadeIn 0.6s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-out {
-  animation: fadeOut 0.4s ease forwards;
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-    }
-  
+audio{width:100%;margin-top:10px}
+a{color:#7f1d1d;text-decoration:none}
 </style>
 </head>
-  <script>
-document.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", function(e) {
-    e.preventDefault();
-    const page = document.querySelector(".page");
-    page.classList.add("fade-out");
-
-    setTimeout(() => {
-      window.location = this.href;
-    }, 350);
-  });
-});
-  </script>
-  
 
 <body>
-  <div class="page">
-    
+<div class="page">
+  <h2>Songs For You 🎧</h2>
 
-<h2>Songs For You 🎧</h2>
-
-<div class="song-card">
-  <b>just sang for you 💗</b>
-  <audio controls src="song1.mp3"></audio>
-</div>
-
-<div class="song-card">
-  <b>Another one ✨</b>
-  <audio controls src="song2.mp3"></audio>
-</div>
-
-<a href="home.html">← Back</a>
+  <div class="song-card">
+    < Just sang this for you 😽</b>
+    <audio controls src="song1.mp3"></audio>
   </div>
-  
+
+  <div class="song-card">
+    <b>Another Memory ✨</b>
+    <audio controls src="song2.mp3"></audio>
+  </div>
+
+  <a href="home.html">← Back</a>
+</div>
+
+<script>
+document.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click",e=>{
+    e.preventDefault();
+    document.querySelector(".page").classList.add("fade-out");
+    setTimeout(()=>location=link.href,350);
+  });
+});
+</script>
 </body>
 </html>
