@@ -7,39 +7,59 @@
 <style>
 body{
   margin:0;
-  font-family:Poppins, Arial;
-  background: linear-gradient(135deg,#ffd6e8,#ffeaf5,#fff0f7);
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg,#121212,#1e1e1e,#000000);
+  color:white;
 }
 
+/* Container */
 .container{
-  padding:30px;
+  padding:25px;
 }
 
+/* Spotify-style card */
 .song-card{
-  background:white;
-  padding:20px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
   border-radius:20px;
+  padding:20px;
   margin-bottom:25px;
-  box-shadow:0 15px 40px rgba(255,105,180,0.2);
-  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  transition:0.3s ease;
 }
 
+.song-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 40px rgba(0,255,150,0.3);
+}
+
+/* Cover image */
+.cover{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+
+/* Song title */
 .song-card h3{
-  color:#d63384;
-  margin-bottom:10px;
+  margin:0 0 10px 0;
+  font-weight:normal;
 }
 
+/* Audio */
 audio{
   width:100%;
-  outline:none;
+  filter:invert(1);
 }
 
+/* Back button */
 a{
   display:block;
   text-align:center;
   margin-top:30px;
   text-decoration:none;
-  color:#d63384;
+  color:#1DB954;
+  font-weight:bold;
 }
 </style>
 </head>
@@ -49,13 +69,7 @@ a{
 <div class="container">
 
   <div class="song-card">
-    <h3> (⁠ﾉ⁠◕⁠ヮ⁠◕⁠)⁠ﾉ⁠*⁠.⁠✧ </h3>
-    <audio controls>
-      <source src="Oruthi.mp3" type="audio/mpeg">
-    </audio>
-  </div>
-
-  <div class="song-card">
+    <img src="cover1.jpg" class="cover">
     <h3> (⁠=⁠｀⁠ェ⁠´⁠=⁠) </h3>
     <audio controls>
       <source src="From the start.mp3" type="audio/mpeg">
@@ -63,17 +77,27 @@ a{
   </div>
 
   <div class="song-card">
-    <h3> ʕ⁠´⁠•⁠ᴥ⁠•⁠`⁠ʔ </h3>
+    <img src="cover2.jpg" class="cover">
+    <h3> ╰⁠(⁠⸝⁠⸝⁠⸝⁠´⁠꒳⁠`⁠⸝⁠⸝⁠⸝⁠)⁠╯</h3>
+    <audio controls>
+      <source src="Oruthi.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div class="song-card">
+    <img src="cover3.jpg" class="cover">
+    <h3>ʕ⁠´⁠•⁠ᴥ⁠•⁠`⁠ʔ </h3>
     <audio controls>
       <source src="double take.mp3" type="audio/mpeg">
     </audio>
   </div>
   <div class="song-card">
-    <h3> (⁠≧⁠(⁠ｴ⁠)⁠≦⁠ ⁠) </h3>
+    <img src="cover4.jpg" class="cover">
+    <h3>ʕ⁠っ⁠•⁠ᴥ⁠•⁠ʔ⁠っ </h3>
     <audio controls>
       <source src="those eyes.mp3" type="audio/mpeg">
     </audio>
-  </div>
+                            </div>
 
   <a href="home.html">← Back</a>
 
