@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Quotes 💕</title>
+
+<style>
+body{
+  margin:0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg,#ffd6e8,#ffeaf5,#fff0f7);
+  overflow-x:hidden;
+}
+
+/* Floating hearts */
+.heart{
+  position:fixed;
+  font-size:20px;
+  animation: float 6s linear infinite;
+  opacity:0.6;
+}
+@keyframes float{
+  from{transform:translateY(100vh);opacity:0}
+  to{transform:translateY(-10vh);opacity:1}
+}
+
+.container{
+  padding:30px;
+}
+
+.quote-box{
+  background:white;
+  padding:25px;
+  border-radius:25px;
+  margin:30px 0;
+  box-shadow:0 15px 40px rgba(255,105,180,0.2);
+  color:#b03060;
+  font-size:20px;
+  min-height:80px;
+}
+
+/* Back button */
+a{
+  display:block;
+  text-align:center;
+  margin-top:40px;
+  text-decoration:none;
+  font-size:18px;
+  color:#d63384;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="quote-box" id="quote1"></div>
+  <div class="quote-box" id="quote2"></div>
+  <div class="quote-box" id="quote3"></div>
+
+  <a href="home.html">← Back</a>
+
+</div>
+<audio id="bg-music" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+  
+<script>
+const quotes = [
+  "In a universe full of stars, you are the one my heart keeps orbiting.",
+  "Even on my darkest nights, your voice becomes my moonlight.",
+  "You turned my ordinary days into a song I never want to skip.",
+  "When the world feels loud and heavy, your smile becomes my quiet comfort.",
+  "I don’t need wings to fly — your love is already my sky.",
+  "In every lifetime, in every timeline, I would still find you.",
+  "Like spring after a long winter, you came and softened everything.",
+  "If my heart had a melody, it would whisper your name in every note."
+];
+
+const container = document.getElementById("quote1");
+container.innerHTML = "";
+
+let quoteIndex = 0;
+let charIndex = 0;
+
+function typePoem(){
+  if(quoteIndex < quotes.length){
+    if(charIndex < quotes[quoteIndex].length){
+      container.innerHTML += quotes[quoteIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(typePoem, 35);
+    } else {
+      container.innerHTML += "<br><br>";
+      quoteIndex++;
+      charIndex = 0;
+      setTimeout(typePoem, 900);
+    }
+  }
+}
+
+typePoem();
+
+/* Floating hearts */
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💗";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.fontSize = (15 + Math.random()*25) + "px";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),6000);
+}
+setInterval(createHeart,800);
+
+/* Fix autoplay on mobile */
+const music = document.getElementById("bg-music");
+document.addEventListener("click", () => {
+  music.play();
+});
+</script>
+
+</body>
+</html>
