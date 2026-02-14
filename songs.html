@@ -2,69 +2,82 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Songs 🎶</title>
+<title>Songs 🎵</title>
 
 <style>
 body{
   margin:0;
-  background:url("bg.jpg") center/cover fixed;
   font-family:Poppins, Arial;
-  text-align:center;
+  background: linear-gradient(135deg,#ffd6e8,#ffeaf5,#fff0f7);
 }
 
-/* PAGE TRANSITION */
-.page{
-  animation:fadeIn 0.6s ease forwards;
-}
-.fade-out{
-  animation:fadeOut 0.4s ease forwards;
-}
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(15px)}
-  to{opacity:1;transform:translateY(0)}
-}
-@keyframes fadeOut{
-  to{opacity:0;transform:translateY(-15px)}
+.container{
+  padding:30px;
 }
 
 .song-card{
-  background:rgba(255,245,240,0.9);
-  margin:15px;
-  padding:15px;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  margin-bottom:25px;
+  box-shadow:0 15px 40px rgba(255,105,180,0.2);
+  text-align:center;
 }
 
-audio{width:100%;margin-top:10px}
-a{color:#7f1d1d;text-decoration:none}
+.song-card h3{
+  color:#d63384;
+  margin-bottom:10px;
+}
+
+audio{
+  width:100%;
+  outline:none;
+}
+
+a{
+  display:block;
+  text-align:center;
+  margin-top:30px;
+  text-decoration:none;
+  color:#d63384;
+}
 </style>
 </head>
 
 <body>
-<div class="page">
-  <h2>Songs For You 🎧</h2>
+
+<div class="container">
 
   <div class="song-card">
-    < Just sang this for you 😽</b>
-    <audio controls src="song1.mp3"></audio>
+    <h3> (⁠ﾉ⁠◕⁠ヮ⁠◕⁠)⁠ﾉ⁠*⁠.⁠✧ </h3>
+    <audio controls>
+      <source src="Oruthi.mp3" type="audio/mpeg">
+    </audio>
   </div>
 
   <div class="song-card">
-    <b>Another Memory ✨</b>
-    <audio controls src="song2.mp3"></audio>
+    <h3> (⁠=⁠｀⁠ェ⁠´⁠=⁠) </h3>
+    <audio controls>
+      <source src="From the start.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div class="song-card">
+    <h3> ʕ⁠´⁠•⁠ᴥ⁠•⁠`⁠ʔ </h3>
+    <audio controls>
+      <source src="double take.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="song-card">
+    <h3> (⁠≧⁠(⁠ｴ⁠)⁠≦⁠ ⁠) </h3>
+    <audio controls>
+      <source src="those eyes.mp3" type="audio/mpeg">
+    </audio>
   </div>
 
   <a href="home.html">← Back</a>
+
 </div>
 
-<script>
-document.querySelectorAll("a").forEach(link=>{
-  link.addEventListener("click",e=>{
-    e.preventDefault();
-    document.querySelector(".page").classList.add("fade-out");
-    setTimeout(()=>location=link.href,350);
-  });
-});
-</script>
 </body>
 </html>
